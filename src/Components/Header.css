@@ -1,0 +1,14 @@
+.siteHeader {
+    padding: 1em;
+    /*background-color: #E9EDC9;*/
+    margin: 0;
+    text-align: center;
+    color: #b9c145;
+}
+
+.friends {
+    padding-right: 20em;
+    padding-bottom: 0%;
+    height: 25em;
+    width: auto;
+}

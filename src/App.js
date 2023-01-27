@@ -1,45 +1,59 @@
-import React, { useCallback } from 'react';
+import React, {useState} from 'react';
 import Particles from "react-particles";
+import Header from './Components/Header'
+import Questions from './Components/Questions'
+import Homepage from './Components/Homepage';
 import { loadFull } from "tsparticles";
-import logo from './logo.svg';
 import './App.css';
-import particlesOptions from "./particles.json";
+
+
+
 
 function App() {
-    const particlesInit = useCallback(main => {
-        loadFull(main);
-    }, [])
+    const [login, setLogin] = useState(false)
+    const [fillNum, setFillNum] = useState(0)
 
-    return (
+    const changeLogin = () => {
+        setLogin(true)
+    }
+
+    const changeFillNum = () => {
+        setFillNum++
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
+    return ( 
         <div className="App">
-            <Particles options={particlesOptions} init={particlesInit}/>
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <p>
-                    Edit <code>src/particles.json</code> to customize Particles, then save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <a
-                    className="App-link"
-                    href="https://particles.js.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    See Particles samples
-                </a>
-            </header>
+            <Header />
+
+            {!login?
+                <div>
+                    
+                    <div className="formComponent">
+                        <p className="title">Insére tes informations: </p>
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" id="fname" name="fname" placeholder="Prénom" onChange={changeFillNum} required/> <br />
+                            <input type="text" id="lname" name="lname" placeholder="Nom" onChange={changeFillNum} required/> <br />
+                            <input type="text" id="class" name="class" placeholder="Classe" onChange={changeFillNum} required/> <br />
+                            <input type="text" id="number" name="number" placeholder="Numéro" onChange={changeFillNum} required/> <br />
+                            <button type="submit" className="submitClass" onClick={changeLogin} > 
+                                        Submit
+                            </button>    
+                        </form>
+                    </div>    
+                
+                </div> 
+            :
+            <Questions />}
+
+            {/* <Particles options={particlesOptions} init={particlesInit}/> */}
         </div>
     );
+
+    
 }
 
 export default App;

@@ -1,0 +1,23 @@
+.formComponent {
+    color: #b9c145;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #b9c145;
+}
+
+input {
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 5px;
+    width: 25em;
+}
+
+.submitClass {
+    width: 15em;
+    background-color: #b9c145;
+    color: #ffffff;
+    font-size: 1em;
+    padding: 0.5em;
+}

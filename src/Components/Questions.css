@@ -1,0 +1,24 @@
+.questions {
+    padding: 1em;
+    color: #b9c145;
+}
+
+.questSub {
+    padding: 1em;
+}
+
+.radio {
+    vertical-align: middle;
+    align-items: center;
+}
+
+.options {
+    padding: 1em;
+    padding-right: 9em;
+    text-align: center;
+    color: black;
+}
+
+.rap {
+    margin-top: 0;
+}
